@@ -303,6 +303,6 @@ private typealias TestOption = Option<Int>
 
 private object OptionGen : Gen<TestOption> {
     override fun generate(): TestOption =
-        if (Gen.bool().generate()) Option.empty() else Option.of(Gen.int().generate())
-
+            if (!Gen.bool().generate() && Gen.choose(1, 20).generate() == 1) Option.empty()
+            else Option.of(Gen.int().generate())
 }

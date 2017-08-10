@@ -303,6 +303,7 @@ private typealias TestValidationNEL = ValidationNEL<String, Int>
 
 private object ValidationNELGen : Gen<TestValidationNEL> {
     override fun generate(): TestValidationNEL =
-        if (Gen.bool().generate()) ValidationNEL.failure(Gen.string().generate()) else ValidationNEL.success(Gen.int().generate())
-
+            if (!Gen.bool().generate() && Gen.choose(1, 20).generate() == 1)
+                ValidationNEL.failure(Gen.string().generate())
+            else ValidationNEL.success(Gen.int().generate())
 }

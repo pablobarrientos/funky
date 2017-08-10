@@ -4,14 +4,14 @@ A functional programming library for Kotlin.
 
 ## Introduction
 `TODO`
-Genrate kotlindocs
 
 ## Usage
 The current code has never been released as a library since there's still work to do
 
 ## Quick Start
+`TODO`
 
-## TODO
+## What's next?
 Implement Function1 module and other functors and applicative functors.
 Implement Monoid and Semi-group.
 

@@ -242,7 +242,8 @@ fun <L, A, B, R> ((A, B) -> R).liftA2(): (Either<L, A>, Either<L, B>) -> Either<
 fun <L, R> Either<L, Either<L, R>>.flatten(): Either<L, R> = fold({ Either.left(it) }, { it })
 
 /*
-* Map each element of the list of Either to an action, evaluate these actions from left to right, and collect the results.
+* Map each element of the list of Either to an action, evaluate these actions from left to right. It returns the first
+* left in case there's at least one in the list. It is important to note that it evaluates all the elements of the list.
  */
 inline fun <L, A, B> List<A>.traverseA(f: (A) -> Either<L, B>): Either<L, List<B>> =
         foldRight(Either.right(emptyList()),

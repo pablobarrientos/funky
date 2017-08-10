@@ -19,8 +19,8 @@ import org.funky.util.compose
 import java.util.NoSuchElementException
 
 /*
- * Represents optional values. Instances of Option are either an instance of scala.Some or the object None.
- * The most idiomatic way to use an scala.Option instance is to treat it as a collection of zero or one element and use
+ * Represents optional values. Instances of Option are either an instance of Some or the object None.
+ * The most idiomatic way to use an Option instance is to treat it as a collection of zero or one element and use
   * map,flatMap, filter, or foreach.
  */
 sealed class Option<out A> {

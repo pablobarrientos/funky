@@ -24,6 +24,7 @@ import io.kotlintest.matchers.shouldBe
 import io.kotlintest.properties.forAll
 import io.kotlintest.specs.StringSpec
 import io.kotlintest.properties.Gen
+import org.funky.option.firstOption
 
 class EitherTest : StringSpec() {
 
@@ -247,7 +248,7 @@ class EitherTest : StringSpec() {
                 var generatedLeft = false
                 val result = list.traverseA { _ ->
                     val either = EitherGen.generate()
-                    generatedLeft = generatedLeft || either.isLeft()
+                    if (either.isLeft()) generatedLeft = true
                     either
                 }
                 (generatedLeft && result.isLeft()) || (!generatedLeft && result.isRight())
@@ -256,8 +257,9 @@ class EitherTest : StringSpec() {
 
         "sequence" {
             forAll(Gen.list(EitherGen)) { list: List<Either<String, Int>> ->
+                val firstLeft: Option<Either<String,Int>> = list.firstOption { it!!.isLeft() }
                 val result = list.sequence()
-                (list.any { it.isLeft() } && result.isLeft()) || (list.all { it.isRight() } && result.isRight())
+                (list.any { it.isLeft() } && result.isLeft() && result == firstLeft.get()) || (list.all { it.isRight() } && result.isRight())
             }
         }
 
@@ -315,8 +317,7 @@ class EitherTest : StringSpec() {
 
         "applicative functor - composition" {
             forAll { y: Int ->
-                val f : (Int) -> Int = { it
-                    + 1 }
+                val f : (Int) -> Int = { it + 1 }
                 val v: Either<String, (Int) -> Int> = f.pure()
                 val g : (Int) -> String = { it.toString() }
                 val u: Either<String, (Int) -> String> = g.pure()
@@ -334,6 +335,7 @@ private typealias TestEither = Either<String, Int>
 
 private object EitherGen : Gen<TestEither> {
     override fun generate(): TestEither =
-        if (Gen.bool().generate()) Either.left(Gen.string().generate()) else Either.right(Gen.int().generate())
-
+        if (!Gen.bool().generate() && Gen.choose(1, 20).generate() == 1)
+            Either.left(Gen.string().generate())
+        else Either.right(Gen.int().generate())
 }
