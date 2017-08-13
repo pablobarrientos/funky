@@ -15,7 +15,7 @@
  */
 package org.funky.curry
 
-/*
+/**
  * Extensions to convert a function with [2 to 22] parameters to a curried function.
  */
 fun <A, B, Z> ((A, B) -> Z).curried(): (A) -> (B) -> Z = { p1: A -> { p2: B -> this(p1, p2) } }
@@ -40,7 +40,7 @@ fun <A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, Z> ((A, B, C, D
 fun <A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, Z> ((A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U) -> Z).curried(): (A) -> (B) -> (C) -> (D) -> (E) -> (F) -> (G) -> (H) -> (I) -> (J) -> (K) -> (L) -> (M) -> (N) -> (O) -> (P) -> (Q) -> (R) -> (S) -> (T) -> (U) -> Z = { p1: A -> { p2: B -> { p3: C -> { p4: D -> { p5: E -> { p6: F -> { p7: G -> { p8: H -> { p9: I -> { p10: J -> { p11: K -> { p12: L -> { p13: M -> { p14: N -> { p15: O -> { p16: P -> { p17: Q -> { p18: R -> { p19: S -> { p20: T -> { p21: U -> this(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21) } } } } } } } } } } } } } } } } } } } } }
 fun <A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, Z> ((A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V) -> Z).curried(): (A) -> (B) -> (C) -> (D) -> (E) -> (F) -> (G) -> (H) -> (I) -> (J) -> (K) -> (L) -> (M) -> (N) -> (O) -> (P) -> (Q) -> (R) -> (S) -> (T) -> (U) -> (V) -> Z = { p1: A -> { p2: B -> { p3: C -> { p4: D -> { p5: E -> { p6: F -> { p7: G -> { p8: H -> { p9: I -> { p10: J -> { p11: K -> { p12: L -> { p13: M -> { p14: N -> { p15: O -> { p16: P -> { p17: Q -> { p18: R -> { p19: S -> { p20: T -> { p21: U -> { p22: V -> this(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22) } } } } } } } } } } } } } } } } } } } } } }
 
-/*
+/**
  * Extensions to convert a curried function to an uncurried function.
  */
 fun <A, B, Z> ((A) -> (B) -> Z).uncurried(): (A, B) -> Z = { p1: A, p2: B -> this(p1)(p2) }

@@ -232,7 +232,7 @@ class ValidationNELTest : StringSpec() {
         }
 
         //FUNCTOR LAWS
-        /*
+        /**
         fmap id = id                   -- 1st functor law
         fmap (g . f) = fmap g . fmap f -- 2nd functor law
         */
@@ -251,7 +251,7 @@ class ValidationNELTest : StringSpec() {
         }
 
         //APPLICATIVE FUNCTOR LAWS
-        /*
+        /**
         pure id <*> v = v                            -- Identity
         pure f <*> pure x = pure (f x)               -- Homomorphism
         u <*> pure y = pure ($ y) <*> u              -- Interchange

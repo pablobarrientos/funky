@@ -15,7 +15,7 @@
  */
 package org.funky.curry.ext
 
-/*
+/**
  * Syntax extension to partially apply uncurried functions.
  *
  * E.g.:

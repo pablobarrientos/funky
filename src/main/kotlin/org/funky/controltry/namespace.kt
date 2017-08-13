@@ -22,7 +22,7 @@ import org.funky.option.Option
 import org.funky.option.toOption
 import java.util.NoSuchElementException
 
-/*
+/**
  * The Try type represents a computation that may either result in an exception, or return a successfully computed value.
  * It's similar to, but semantically different Either type.
  *
@@ -48,22 +48,22 @@ import java.util.NoSuchElementException
  *    }
  */
 sealed class Try<T> {
-    /*
+    /**
      * Returns true if the Try is a Failure, false otherwise.
      */
     abstract fun isFailure(): Boolean
-    /*
+    /**
      * Returns true if the Try is a Success, false otherwise.
      */
     abstract fun isSuccess(): Boolean
 
-    /*
+    /**
      * Returns the value from this Success or throws the exception if this is a Failure.
      */
     @Throws(Throwable::class)
     abstract fun get(): T
 
-    /*
+    /**
      * Catamorphism for Try.
      * Applies f if this is a Failure or s if this is a Success. If s is initially applied and throws an exception, then f is applied with this exception.
      */
@@ -76,24 +76,24 @@ sealed class Try<T> {
         is Try.Failure -> f(throwable)
     }
 
-    /*
+    /**
      * Returns the value from this Success or the given default argument if this is a Failure.
      */
     fun getOrElse(alternative: () -> T): T = fold({ it }, { alternative() })
 
-    /*
+    /**
      * Returns this Try if it's a Success or the given default argument if this is a Failure.
      */
     infix fun orElse(alternative: () -> Try<T>): Try<T> = fold({ this }, { alternative() })
 
-    /*
+    /**
      * Applies the given function f if this is a Success, otherwise returns Unit if this is a Failure.
      */
     fun foreach(f: (T) -> Unit) {
         if (isSuccess()) f(get())
     }
 
-    /*
+    /**
      * Returns the given function applied to the value from this Success or returns this if this is a Failure.
      */
     fun <U> flatMap(f: (T) -> Try<U>): Try<U> = when (this) {
@@ -105,17 +105,17 @@ sealed class Try<T> {
         is Try.Failure -> Try.Failure<U>(throwable)
     }
 
-    /*
+    /**
     * Maps the given function to the value from this Success or returns this if this is a Failure.
      */
     fun <U> map(f: (T) -> U): Try<U> = flatMap { Try.Success(f(it)) }
 
-    /*
+    /**
      * Indicates if the receiver is a Success and its value satisfies the predicate.
      */
     fun exists(predicate: (T) -> Boolean): Boolean = fold({ predicate(it) }, { false })
 
-    /*
+    /**
      * Converts this to a Failure if the predicate is not satisfied.
      */
     fun filter(predicate: (T) -> Boolean): Try<T> = when (this) {
@@ -129,7 +129,7 @@ sealed class Try<T> {
         is Try.Failure -> this
     }
 
-    /*
+    /**
      * Applies the given function f if this is a Failure, otherwise returns this if this is a Success.
      */
     fun recover(f: (Throwable) -> Try<T>): Try<T> = when (this) {
@@ -141,7 +141,7 @@ sealed class Try<T> {
         }
     }
 
-    /*
+    /**
      * Executes body in case the receiver is Success. Returns the receiver.
      */
     fun onSuccess(body: (T) -> Unit): Try<T> {
@@ -149,7 +149,7 @@ sealed class Try<T> {
         return this
     }
 
-    /*
+    /**
      * Executes body in case the receiver is Failure. Returns the receiver.
      */
     fun onFailure(body: (Throwable) -> Unit): Try<T> = when (this) {
@@ -160,22 +160,22 @@ sealed class Try<T> {
         }
     }
 
-    /*
+    /**
      * Returns None if this is a Failure or a Some containing the value if this is a Success.
      */
     fun toOption(): Option<T> = fold({ it.toOption() }, { Option.empty() })
 
-    /*
+    /**
      * Returns Either.Left if this is a Failure orn Either,Right containing the value if this is a Success.
      */
     fun toEither(): Either<Throwable, T> = fold({ it.toRight() }, { it.toLeft() })
 
-    /*
+    /**
     * Completes this Try with an exception wrapped in a Success.
      */
     fun failed(): Try<Throwable> = fold({ Try.Failure(UnsupportedOperationException("Success")) }, { Try.Success(it) })
 
-    /*
+    /**
      * Completes this Try by applying the function f to this if this is of type Failure, or conversely, by applying s if this is a Success.
      */
     fun <U> transform(s: (T) -> Try<U>, f: (Throwable) -> Try<U>): Try<U> = when (this) {
@@ -187,7 +187,7 @@ sealed class Try<T> {
         }
     }
 
-    /*
+    /**
      * Executes runnable in case the receiver is Success, wrapping the result in a new Try.
      */
     fun andThen(runnable: () -> Unit): Try<Unit> =
@@ -232,7 +232,7 @@ sealed class Try<T> {
     }
 }
 
-/*
+/**
  * Utility function to wrap any code as a Try instance.
  */
 fun <T> Try(body: () -> T): Try<T> = try {
@@ -241,7 +241,7 @@ fun <T> Try(body: () -> T): Try<T> = try {
     Try.Failure(t)
 }
 
-/*
+/**
  * Transforms a nested Try, ie, a Try of type Try<Try<T>>, into an un-nested Try, ie, a Try of type Try<T>.
  */
 fun <T> Try<Try<T>>.flatten(): Try<T> = fold ({ it }, { Try.Failure<T>(it) })

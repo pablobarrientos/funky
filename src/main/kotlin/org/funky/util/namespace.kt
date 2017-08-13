@@ -15,33 +15,33 @@
  */
 package org.funky.util
 
-/*
+/**
  * Function composition. I.e. (f compose g)(x) <=> f(g(x))
  */
 infix fun <A, B, C> ((B) -> C).compose(f: (A) -> B): (A) -> C = { this(f(it)) }
 
-/*
+/**
  * Composition of function in reverse order: (f forwardCompose g)(x) <=> g(f(x)).
  * This function is useful if we chain function and provide the "initial input" at the end of the chain.
  */
 infix fun <A, B, C> ((A) -> B).forwardCompose(f: (B) -> C): (A) -> C = { f(this(it)) }
 
-/*
+/**
  * Alias for forwardCompose
  */
 infix fun <A, B, C> ((A) -> B).andThen(f: (B) -> C): (A) -> C = forwardCompose(f)
 
-/*
+/**
  * Identify function.
  */
 fun <A> identity(): (A) -> A = { it }
 
-/*
+/**
  * Converts any value A to a function (B) -> A
  */
 fun <A> const(a: A): (Any) -> A = { _ -> a }
 
-/*
+/**
  * flip takes its two arguments in the reverse order of the receiver.
  */
 fun <A, B, C> ((A, B) -> C).flip(): (B, A) -> C = { a, b -> this(b, a) }
@@ -51,7 +51,7 @@ fun <A, B, C, D, E, F> ((A, B, C, D, E) -> F).flip(): (E, D, C, B, A) -> F = { a
 fun <A, B, C, D, E, F, G> ((A, B, C, D, E, F) -> G).flip(): (F, E, D, C, B, A) -> G = { a, b, c, d, e, f -> this(f, e, d, c, b, a ) }
 fun <A, B, C, D, E, F, G, H> ((A, B, C, D, E, F, G) -> H).flip(): (G, F, E, D, C, B, A) -> H = { a, b, c, d, e, f, g -> this(g, f, e, d, c, b, a ) }
 
-/*
+/**
  * Until yields the result of applying the function until condition holds.
  *
  * var count = 0
@@ -64,7 +64,7 @@ fun <A, B, C, D, E, F, G, H> ((A, B, C, D, E, F, G) -> H).flip(): (G, F, E, D, C
 tailrec fun <T> ((T) -> T).until(condition: (T) -> Boolean, initialValue: T): T =
         if (condition(initialValue)) initialValue else this.until(condition, this(initialValue))
 
-/*
+/**
  * Given the condition, it will execute the function if the condition is false.
  *
  * unless (x == 0) { y = 100 / x }
