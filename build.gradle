@@ -53,7 +53,6 @@ dependencies {
 }
 
 dokka {
-    outputFormat = 'markdown'
+    outputFormat = 'gfm'
     outputDirectory = "documentation"
-//    reportNotDocumented = true
 }

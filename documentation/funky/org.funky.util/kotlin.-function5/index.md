@@ -2,5 +2,6 @@
 
 ### Extensions for kotlin.Function5
 
+| Name | Summary |
+|---|---|
 | [flip](flip.md) | `fun <A, B, C, D, E, F> ((A, B, C, D, E) -> F).flip(): (E, D, C, B, A) -> F` |
-

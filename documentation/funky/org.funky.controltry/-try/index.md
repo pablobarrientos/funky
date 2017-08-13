@@ -30,11 +30,15 @@ fun divide(): Try {
 
 ### Types
 
+| Name | Summary |
+|---|---|
 | [Failure](-failure/index.md) | `class Failure<T> : Try<T>` |
 | [Success](-success/index.md) | `class Success<T> : Try<T>` |
 
 ### Functions
 
+| Name | Summary |
+|---|---|
 | [andThen](and-then.md) | `fun andThen(runnable: () -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): Try<`[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`>`<br>Executes runnable in case the receiver is Success, wrapping the result in a new Try. |
 | [exists](exists.md) | `fun exists(predicate: (T) -> `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Indicates if the receiver is a Success and its value satisfies the predicate. |
 | [failed](failed.md) | `fun failed(): Try<`[`Throwable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)`>`<br>Completes this Try with an exception wrapped in a Success. |
@@ -57,10 +61,13 @@ fun divide(): Try {
 
 ### Extension Functions
 
+| Name | Summary |
+|---|---|
 | [flatten](../flatten.md) | `fun <T> Try<Try<T>>.flatten(): Try<T>`<br>Transforms a nested Try, ie, a Try of type Try&lt;Try&gt;, into an un-nested Try, ie, a Try of type Try. |
 
 ### Inheritors
 
+| Name | Summary |
+|---|---|
 | [Failure](-failure/index.md) | `class Failure<T> : Try<T>` |
 | [Success](-success/index.md) | `class Success<T> : Try<T>` |
-

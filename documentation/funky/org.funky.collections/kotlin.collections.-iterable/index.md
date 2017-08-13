@@ -2,6 +2,8 @@
 
 ### Extensions for kotlin.collections.Iterable
 
+| Name | Summary |
+|---|---|
 | [cycle](cycle.md) | `fun <A> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.cycle(): `[`Sequence`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html)`<A>`<br>cycle ties a finite into a circular sequence, or equivalently, the infinite repetition of the original list. |
 | [fold1](fold1.md) | `fun <A> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.fold1(f: (A, A) -> A): A`<br>A variant of fold that has no base case, and thus may only be applied to non-empty structures. Throws IllegalArgumentException if the iterable is empty. |
 | [foldRight1](fold-right1.md) | `fun <A> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.foldRight1(f: (A, A) -> A): A`<br>A variant of foldRight that has no base case, and thus may only be applied to non-empty structures. Throws IllegalArgumentException if the iterable is empty. |
@@ -11,4 +13,3 @@
 | [tail](tail.md) | `fun <A> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.tail(): `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>`<br>Extract the elements after the head of a list, which must be non-empty. |
 | [unzip](unzip.md) | `fun <A, B> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<`[`Pair`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html)`<A, B>>.unzip(): `[`Pair`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html)`<`[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>, `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<B>>`<br>unzip transforms a list of pairs into a list of first components and a list of second components |
 | [zipWith](zip-with.md) | `fun <A, B, C> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.zipWith(f: (A, B) -> C, other: `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<B>): `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<C>`<br>zipWith generalises zip by zipping with the function given as the first argument, instead of a tupling function. |
-

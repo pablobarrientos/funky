@@ -2,5 +2,6 @@
 
 ### Extensions for kotlin.Function2
 
+| Name | Summary |
+|---|---|
 | [flip](flip.md) | `fun <A, B, C> ((A, B) -> C).flip(): (B, A) -> C`<br>flip takes its two arguments in the reverse order of the receiver. |
-

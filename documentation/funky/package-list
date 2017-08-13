@@ -1,4 +1,4 @@
-$dokka.format:markdown
+$dokka.format:gfm
 $dokka.linkExtension:md
 $dokka.location:org.funky.collections$cycle(kotlin.collections.Iterable((org.funky.collections.cycle.A)))org.funky.collections/kotlin.collections.-iterable/cycle.md
 $dokka.location:org.funky.collections$filterMap(kotlin.collections.List((org.funky.collections.filterMap.A)), kotlin.Function1((org.funky.collections.filterMap.A, kotlin.Boolean)), kotlin.Function1((org.funky.collections.filterMap.A, org.funky.collections.filterMap.B)))org.funky.collections/kotlin.collections.-list/filter-map.md

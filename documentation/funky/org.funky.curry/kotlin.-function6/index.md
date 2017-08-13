@@ -2,5 +2,6 @@
 
 ### Extensions for kotlin.Function6
 
+| Name | Summary |
+|---|---|
 | [curried](curried.md) | `fun <A, B, C, D, E, F, Z> ((A, B, C, D, E, F) -> Z).curried(): (A) -> (B) -> (C) -> (D) -> (E) -> (F) -> Z` |
-

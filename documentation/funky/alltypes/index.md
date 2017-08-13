@@ -2,6 +2,8 @@
 
 ### All Types
 
+| Name | Summary |
+|---|---|
 | [kotlin.Array](../org.funky.option/kotlin.-array/index.md) (extensions in package org.funky.option) |  |
 | [kotlin.BooleanArray](../org.funky.option/kotlin.-boolean-array/index.md) (extensions in package org.funky.option) |  |
 | [kotlin.ByteArray](../org.funky.option/kotlin.-byte-array/index.md) (extensions in package org.funky.option) |  |
@@ -70,4 +72,3 @@
 | [kotlin.String](../org.funky.option/kotlin.-string/index.md) (extensions in package org.funky.option) |  |
 | [org.funky.controltry.Try](../org.funky.controltry/-try/index.md) | The Try type represents a computation that may either result in an exception, or return a successfully computed value. It's similar to, but semantically different Either type. |
 | [org.funky.validation.ValidationNEL](../org.funky.validation/-validation-n-e-l/index.md) | Custom implementation of Validation. ValidationNel is similar to Either but it will accumulate all errors on the left. |
-

@@ -4,6 +4,8 @@
 
 ### Extensions for External Classes
 
+| Name | Summary |
+|---|---|
 | [kotlin.Function10](kotlin.-function10/index.md) |  |
 | [kotlin.Function2](kotlin.-function2/index.md) |  |
 | [kotlin.Function3](kotlin.-function3/index.md) |  |
@@ -13,4 +15,3 @@
 | [kotlin.Function7](kotlin.-function7/index.md) |  |
 | [kotlin.Function8](kotlin.-function8/index.md) |  |
 | [kotlin.Function9](kotlin.-function9/index.md) |  |
-

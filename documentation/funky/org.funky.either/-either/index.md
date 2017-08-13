@@ -16,11 +16,15 @@ For example, you could use `Either<String, Int>` to indicate whether a received 
 
 ### Types
 
+| Name | Summary |
+|---|---|
 | [Left](-left/index.md) | `class Left<L, R> : Either<L, R>` |
 | [Right](-right/index.md) | `class Right<L, R> : Either<L, R>` |
 
 ### Functions
 
+| Name | Summary |
+|---|---|
 | [component1](component1.md) | `abstract operator fun component1(): L?`<br>Kotlin projection of Either's first component (left). Returns null id the instance is Right. |
 | [component2](component2.md) | `abstract operator fun component2(): R?`<br>Kotlin projection of Either's second component (right). Returns null id the instance is Left. |
 | [exists](exists.md) | `fun exists(p: (R) -> `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Returns `false` if Left or returns the result of the application of the given predicate to the Right value. |
@@ -38,11 +42,15 @@ For example, you could use `Either<String, Int>` to indicate whether a received 
 
 ### Companion Object Functions
 
+| Name | Summary |
+|---|---|
 | [left](left.md) | `fun <L, R> left(left: L): Either<L, R>`<br>Constructor of left. |
 | [right](right.md) | `fun <L, R> right(right: R): Either<L, R>`<br>Constructor of right. |
 
 ### Extension Functions
 
+| Name | Summary |
+|---|---|
 | [ap](../ap.md) | `infix fun <L, R, A> Either<L, (A) -> R>.ap(optR: Either<L, A>): Either<L, R>`<br>Sequential application of Either as applicative functor. |
 | [ap2](../ap2.md) | `fun <L, A, B, R> Either<L, (A, B) -> R>.ap2(eitherA: Either<L, A>, eitherB: Either<L, B>): Either<L, R>`<br>Sequential application of Either as applicative functor. |
 | [flatten](../flatten.md) | `fun <L, R> Either<L, Either<L, R>>.flatten(): Either<L, R>`<br>Transforms a nested Either, ie, a Either of type Either&lt;L, Either&lt;L, R&gt;&gt;, into an un-nested Either, ie, an Either of type Either&lt;L, R&gt;. |
@@ -50,6 +58,7 @@ For example, you could use `Either<String, Int>` to indicate whether a received 
 
 ### Inheritors
 
+| Name | Summary |
+|---|---|
 | [Left](-left/index.md) | `class Left<L, R> : Either<L, R>` |
 | [Right](-right/index.md) | `class Right<L, R> : Either<L, R>` |
-

@@ -2,5 +2,6 @@
 
 ### Extensions for kotlin.Function8
 
+| Name | Summary |
+|---|---|
 | [curried](curried.md) | `fun <A, B, C, D, E, F, G, H, Z> ((A, B, C, D, E, F, G, H) -> Z).curried(): (A) -> (B) -> (C) -> (D) -> (E) -> (F) -> (G) -> (H) -> Z` |
-

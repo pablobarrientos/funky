@@ -2,5 +2,6 @@
 
 ### Extensions for kotlin.Function4
 
+| Name | Summary |
+|---|---|
 | [invoke](invoke.md) | `operator fun <A, B, C, D, E> ((A, B, C, D) -> E).invoke(a: A): (B, C, D) -> E` |
-

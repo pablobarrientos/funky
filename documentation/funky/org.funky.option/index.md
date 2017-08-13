@@ -4,10 +4,14 @@
 
 ### Types
 
+| Name | Summary |
+|---|---|
 | [Option](-option/index.md) | `sealed class Option<out A>`<br>Represents optional values. Instances of Option are either an instance of Some or the object None. The most idiomatic way to use an Option instance is to treat it as a collection of zero or one element and use map,flatMap, filter, or foreach. |
 
 ### Extensions for External Classes
 
+| Name | Summary |
+|---|---|
 | [kotlin.Array](kotlin.-array/index.md) |  |
 | [kotlin.BooleanArray](kotlin.-boolean-array/index.md) |  |
 | [kotlin.ByteArray](kotlin.-byte-array/index.md) |  |
@@ -26,6 +30,8 @@
 
 ### Functions
 
+| Name | Summary |
+|---|---|
 | [ap](ap.md) | `infix fun <A, B> `[`Option`](-option/index.md)`<(A) -> B>.ap(optA: `[`Option`](-option/index.md)`<A>): `[`Option`](-option/index.md)`<B>`<br>Sequential application of Option as applicative functor. |
 | [ap2](ap2.md) | `fun <A, B, C> `[`Option`](-option/index.md)`<(A, B) -> C>.ap2(optA: `[`Option`](-option/index.md)`<A>, optB: `[`Option`](-option/index.md)`<B>): `[`Option`](-option/index.md)`<C>`<br>Sequential application of Option as applicative functor. |
 | [flatten](flatten.md) | `fun <A> `[`Option`](-option/index.md)`<`[`Option`](-option/index.md)`<A>>.flatten(): `[`Option`](-option/index.md)`<A>`<br>Transforms a nested Option, ie, a Option of type Option&lt;Option&gt;, into an un-nested Option, ie, an Option of type Option&lt; R&gt;. |
@@ -35,4 +41,3 @@
 | [orElse](or-else.md) | `infix fun <A> `[`Option`](-option/index.md)`<A>.orElse(alternative: () -> `[`Option`](-option/index.md)`<A>): `[`Option`](-option/index.md)`<A>`<br>Returns this Option if it is non-empty, otherwise return the result of evaluating alternative. |
 | [pure](pure.md) | `fun <A> A.pure(): `[`Option`](-option/index.md)`<A>`<br>Embed pure values in Option. Lift a value. |
 | [toOption](to-option.md) | `fun <A> A?.toOption(): `[`Option`](-option/index.md)`<A>`<br>Convert any value to Option. |
-

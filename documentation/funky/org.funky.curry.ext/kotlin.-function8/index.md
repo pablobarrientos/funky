@@ -2,5 +2,6 @@
 
 ### Extensions for kotlin.Function8
 
+| Name | Summary |
+|---|---|
 | [invoke](invoke.md) | `operator fun <A, B, C, D, E, F, G, H, I> ((A, B, C, D, E, F, G, H) -> I).invoke(a: A): (B, C, D, E, F, G, H) -> I` |
-

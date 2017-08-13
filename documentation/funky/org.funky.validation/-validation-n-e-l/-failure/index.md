@@ -6,10 +6,14 @@
 
 ### Properties
 
+| Name | Summary |
+|---|---|
 | [l](l.md) | `val l: `[`NonEmptyList`](../../-non-empty-list.md)`<L>` |
 
 ### Functions
 
+| Name | Summary |
+|---|---|
 | [component1](component1.md) | `fun component1(): `[`NonEmptyList`](../../-non-empty-list.md)`<L>`<br>Kotlin projection of ValidationNEL's first component (failure). Returns null id the instance is Success. |
 | [component2](component2.md) | `fun component2(): R?`<br>Kotlin projection of ValidationNEL's second component (success). Returns null id the instance is Failure. |
 | [equals](equals.md) | `fun equals(other: `[`Any`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)`?): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
@@ -20,5 +24,6 @@
 
 ### Inherited Functions
 
+| Name | Summary |
+|---|---|
 | [toEither](../to-either.md) | `fun toEither(): `[`Either`](../../../org.funky.either/-either/index.md)`<`[`NonEmptyList`](../../-non-empty-list.md)`<L>, R>`<br>Returns an instance of Eiher that is equivalent to the receiver (Right &lt;-&gt; Success, Left &lt;-&gt; Failure) |
-

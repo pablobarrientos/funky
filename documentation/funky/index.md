@@ -2,6 +2,8 @@
 
 ### Packages
 
+| Name | Summary |
+|---|---|
 | [org.funky.collections](org.funky.collections/index.md) |  |
 | [org.funky.controltry](org.funky.controltry/index.md) |  |
 | [org.funky.curry](org.funky.curry/index.md) |  |

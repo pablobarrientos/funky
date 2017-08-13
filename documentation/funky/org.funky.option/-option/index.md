@@ -10,11 +10,15 @@ map,flatMap, filter, or foreach.
 
 ### Types
 
+| Name | Summary |
+|---|---|
 | [None](-none/index.md) | `object None : Option<`[`Nothing`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)`>` |
 | [Some](-some/index.md) | `class Some<out A> : Option<A>` |
 
 ### Functions
 
+| Name | Summary |
+|---|---|
 | [exists](exists.md) | `fun exists(p: (A) -> `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Returns true if this option is non-empty and the predicate p returns true when applied to this Option's value. |
 | [filter](filter.md) | `fun filter(p: (A) -> `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): Option<A>`<br>Returns this Option if it is nonEmpty and applying the predicate p to this Option's value returns true. |
 | [filterNot](filter-not.md) | `fun filterNot(p: (A) -> `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): Option<A>`<br>Returns this Option if it is non-empty and applying the predicate p to this Option's value returns false |
@@ -31,11 +35,15 @@ map,flatMap, filter, or foreach.
 
 ### Companion Object Functions
 
+| Name | Summary |
+|---|---|
 | [empty](empty.md) | `fun <A> empty(): Option<A>`<br>Returns an empty Option of type A. |
 | [of](of.md) | `fun <A> of(t: A?): Option<A>`<br>Build a non-empty Option in case the receiver is not null |
 
 ### Extension Functions
 
+| Name | Summary |
+|---|---|
 | [ap](../ap.md) | `infix fun <A, B> Option<(A) -> B>.ap(optA: Option<A>): Option<B>`<br>Sequential application of Option as applicative functor. |
 | [ap2](../ap2.md) | `fun <A, B, C> Option<(A, B) -> C>.ap2(optA: Option<A>, optB: Option<B>): Option<C>`<br>Sequential application of Option as applicative functor. |
 | [flatten](../flatten.md) | `fun <A> Option<Option<A>>.flatten(): Option<A>`<br>Transforms a nested Option, ie, a Option of type Option&lt;Option&gt;, into an un-nested Option, ie, an Option of type Option&lt; R&gt;. |
@@ -49,6 +57,7 @@ map,flatMap, filter, or foreach.
 
 ### Inheritors
 
+| Name | Summary |
+|---|---|
 | [None](-none/index.md) | `object None : Option<`[`Nothing`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html)`>` |
 | [Some](-some/index.md) | `class Some<out A> : Option<A>` |
-
