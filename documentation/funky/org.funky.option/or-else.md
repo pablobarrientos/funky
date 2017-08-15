@@ -4,5 +4,5 @@
 
 `infix fun <A> `[`Option`](-option/index.md)`<A>.orElse(alternative: () -> `[`Option`](-option/index.md)`<A>): `[`Option`](-option/index.md)`<A>`
 
-Returns this Option if it is non-empty, otherwise return the result of evaluating alternative.
+Returns this Option if it is non-empty, otherwise returns the result of evaluating alternative.
 

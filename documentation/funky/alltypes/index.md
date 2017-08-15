@@ -64,7 +64,7 @@
 | [kotlin.collections.List](../org.funky.validation/kotlin.collections.-list/index.md) (extensions in package org.funky.validation) |  |
 | [kotlin.LongArray](../org.funky.option/kotlin.-long-array/index.md) (extensions in package org.funky.option) |  |
 | [org.funky.validation.NonEmptyList](../org.funky.validation/-non-empty-list.md) |  |
-| [org.funky.option.Option](../org.funky.option/-option/index.md) | Represents optional values. Instances of Option are either an instance of Some or the object None. The most idiomatic way to use an Option instance is to treat it as a collection of zero or one element and use map,flatMap, filter, or foreach. |
+| [org.funky.option.Option](../org.funky.option/-option/index.md) | Represents optional values. Instances of Option are either an instance of Some or the object None. The most idiomatic way to use an Option instance is to treat it as a collection of zero or one element and use map, flatMap, filter, or foreach. |
 | [kotlin.Pair](../org.funky.either/kotlin.-pair/index.md) (extensions in package org.funky.either) |  |
 | [kotlin.Pair](../org.funky.validation/kotlin.-pair/index.md) (extensions in package org.funky.validation) |  |
 | [kotlin.sequences.Sequence](../org.funky.option/kotlin.sequences.-sequence/index.md) (extensions in package org.funky.option) |  |

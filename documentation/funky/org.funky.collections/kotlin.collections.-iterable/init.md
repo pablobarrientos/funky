@@ -4,5 +4,5 @@
 
 `fun <A> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.init(): `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<A>`
 
-Return all the elements of a list except the last one. The list must be non-empty.
+Returns all the elements of a list except the last one. The list must be non-empty.
 

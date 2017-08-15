@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |---|---|
-| [liftA](lift-a.md) | `fun <A, B> ((A) -> B).liftA(): (`[`Option`](../-option/index.md)`<A>) -> `[`Option`](../-option/index.md)`<B>`<br>Lift a function to actions. |
+| [liftA](lift-a.md) | `fun <A, B> ((A) -> B).liftA(): (`[`Option`](../-option/index.md)`<A>) -> `[`Option`](../-option/index.md)`<B>`<br>Lifts a function to actions. |

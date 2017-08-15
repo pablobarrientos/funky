@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |---|---|
-| [liftA2](lift-a2.md) | `fun <L, A, B, R> ((A, B) -> R).liftA2(): (`[`Either`](../-either/index.md)`<L, A>, `[`Either`](../-either/index.md)`<L, B>) -> `[`Either`](../-either/index.md)`<L, R>`<br>Lift a binary function to actions. |
+| [liftA2](lift-a2.md) | `fun <L, A, B, R> ((A, B) -> R).liftA2(): (`[`Either`](../-either/index.md)`<L, A>, `[`Either`](../-either/index.md)`<L, B>) -> `[`Either`](../-either/index.md)`<L, R>`<br>Lifts a binary function to actions. |

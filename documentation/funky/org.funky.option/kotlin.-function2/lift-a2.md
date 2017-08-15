@@ -4,5 +4,5 @@
 
 `fun <A, B, C> ((A, B) -> C).liftA2(): (`[`Option`](../-option/index.md)`<A>, `[`Option`](../-option/index.md)`<B>) -> `[`Option`](../-option/index.md)`<C>`
 
-Lift a binary function to actions.
+Lifts a binary function to actions.
 

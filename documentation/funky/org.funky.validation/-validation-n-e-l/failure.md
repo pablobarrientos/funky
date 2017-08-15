@@ -2,7 +2,7 @@
 
 # failure
 
-`fun <L, R> failure(left: L): `[`ValidationNEL`](index.md)`<L, R>`
+`fun <L, R> failure(error: L): `[`ValidationNEL`](index.md)`<L, R>`
 
 Constructor of Failure from a single value.
 

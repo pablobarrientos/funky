@@ -4,5 +4,5 @@
 
 `fun <A> `[`Iterable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html)`<A>.head(): `[`Option`](../../org.funky.option/-option/index.md)`<A>`
 
-Extract the first element of a list and wraps it in an Option.
+Extracts the first element of a list and wraps it in an Option.
 

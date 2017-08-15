@@ -6,5 +6,5 @@
 
 Overrides [ValidationNEL.isSuccess](../is-success.md)
 
-Return True if the given value is a Success, False otherwise.
+Returns True if the given value is a Success, False otherwise.
 

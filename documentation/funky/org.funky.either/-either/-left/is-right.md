@@ -6,5 +6,5 @@
 
 Overrides [Either.isRight](../is-right.md)
 
-Return True if the given value is a Right-value, False otherwise.
+Returns True if the given value is a Right-value, False otherwise.
 

@@ -15,6 +15,7 @@
  */
 package org.funky.validation
 
+import io.kotlintest.matchers.shouldBe
 import org.funky.option.Option
 import org.funky.option.toOption
 import org.funky.util.compose
@@ -209,7 +210,7 @@ class ValidationNELTest : StringSpec() {
         "flatten" {
             val validationNEL = (1.toSuccessNel<String, Int>())
             val wrapped = validationNEL.toSuccessNel<String, ValidationNEL<String, Int>>()
-            wrapped.flatten() == validationNEL
+            wrapped.flatten() shouldBe validationNEL
         }
 
         "traverseA" {

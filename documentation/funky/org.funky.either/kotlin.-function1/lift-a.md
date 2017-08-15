@@ -4,5 +4,5 @@
 
 `fun <L, A, R> ((A) -> R).liftA(): (`[`Either`](../-either/index.md)`<L, A>) -> `[`Either`](../-either/index.md)`<L, R>`
 
-Lift a function to actions.
+Lifts a function to actions.
 

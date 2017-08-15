@@ -56,12 +56,12 @@ sealed class Either<L, R> {
     operator abstract fun component2(): R?
 
     /**
-     * Return True if the given value is a Left-value, False otherwise.
+     * Returns True if the given value is a Left-value, False otherwise.
      */
     abstract fun isLeft(): Boolean
 
     /**
-     * Return True if the given value is a Right-value, False otherwise.
+     * Returns True if the given value is a Right-value, False otherwise.
      */
     abstract fun isRight(): Boolean
 
@@ -168,12 +168,12 @@ fun <A> Either<A, A>.merge(): A = this.fold(identity(), identity())
 /**
  * Builder of Left from any type
  */
-fun <L, R> L.toLeft() = Either.left<L, R>(this)
+fun <L, R> L.toLeft(): Either<L, R> = Either.left<L, R>(this)
 
 /**
  * Builder of Right from any type
  */
-fun <L, R> R.toRight() = Either.right<L, R>(this)
+fun <L, R> R.toRight(): Either<L, R> = Either.right<L, R>(this)
 
 /**
  * Builder of Left from a pair. It takes the first component of the pair to build the value of Left.
@@ -215,7 +215,7 @@ fun <L, R> R.pure(): Either<L, R> = Either.right(this)
 /**
  * Sequential application of Either as applicative functor.
  */
-infix fun <L, R, A> Either<L, (A) -> R>.ap(optR: Either<L, A>): Either<L, R> = flatMap { optR.map(it) }
+infix fun <L, R, A> Either<L, (A) -> R>.ap(eitherR: Either<L, A>): Either<L, R> = flatMap { eitherR.map(it) }
 
 /**
  * Sequential application of Either as applicative functor.
@@ -227,35 +227,35 @@ fun <L, A, B, R> Either<L, (A, B) -> R>.ap2(eitherA: Either<L, A>, eitherB: Eith
         } } }
 
 /**
- * Lift a function to actions.
+ * Lifts a function to actions.
  */
 fun <L, A, R> ((A) -> R).liftA(): (Either<L, A>) -> Either<L, R> = { toRight<L, ((A) -> R)>().ap(it) }
 
 /**
- * Lift a binary function to actions.
+ * Lifts a binary function to actions.
  */
 fun <L, A, B, R> ((A, B) -> R).liftA2(): (Either<L, A>, Either<L, B>) -> Either<L, R> =
-        { optA, optB -> this.toRight<L, ((A, B) -> R)>().ap2(optA, optB) }
+        { eitherA, eitherB -> this.toRight<L, ((A, B) -> R)>().ap2(eitherA, eitherB) }
 /**
  * Transforms a nested Either, ie, a Either of type Either<L, Either<L, R>>, into an un-nested Either, ie, an Either of type Either<L, R>.
  */
 fun <L, R> Either<L, Either<L, R>>.flatten(): Either<L, R> = fold({ Either.left(it) }, { it })
 
 /**
-* Map each element of the list of Either to an action, evaluate these actions from left to right. It returns the first
+* Maps each element of the list of Either to an action, evaluates these actions from left to right. It returns the first
 * left in case there's at least one in the list. It is important to note that it evaluates all the elements of the list.
  */
 inline fun <L, A, B> List<A>.traverseA(f: (A) -> Either<L, B>): Either<L, List<B>> =
         foldRight(Either.right(emptyList()),
-                { a: A, optAcc: Either<L, List<B>> ->
+                { a: A, eitherAcc: Either<L, List<B>> ->
                     f(a).flatMap { b ->
-                        optAcc.map { accB -> accB + b
+                        eitherAcc.map { accB -> accB + b
                         } }
                 }
         )
 
 /**
- * Evaluate each action in the structure from left to right, and collect the results. It also gathers together
+ * Evaluates each action in the structure from left to right, and collects the results. It also gathers together
  * applicative effects.
  * It "flips" List<Either<L, A>> to Either<L, List<A>>.
  */

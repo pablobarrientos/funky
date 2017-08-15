@@ -4,5 +4,5 @@
 
 `fun <A> A?.toOption(): `[`Option`](-option/index.md)`<A>`
 
-Convert any value to Option.
+Converts any value to Option.
 

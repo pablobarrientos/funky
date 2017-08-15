@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |---|---|
-| [liftA2](lift-a2.md) | `fun <A, B, C> ((A, B) -> C).liftA2(): (`[`Option`](../-option/index.md)`<A>, `[`Option`](../-option/index.md)`<B>) -> `[`Option`](../-option/index.md)`<C>`<br>Lift a binary function to actions. |
+| [liftA2](lift-a2.md) | `fun <A, B, C> ((A, B) -> C).liftA2(): (`[`Option`](../-option/index.md)`<A>, `[`Option`](../-option/index.md)`<B>) -> `[`Option`](../-option/index.md)`<C>`<br>Lifts a binary function to actions. |

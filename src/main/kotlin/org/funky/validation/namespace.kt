@@ -25,7 +25,7 @@ typealias NonEmptyList<L> = List<L>
  * Custom implementation of Validation<NonEmptyList>.
  * ValidationNel is similar to Either but it will accumulate all errors on the left.
  *
- * An instance of `Either` is an instance of either Failure or Success.
+ * An instance of `ValidationNEL` is an instance of either Failure or Success.
  */
 sealed class ValidationNEL<L, R> {
 
@@ -33,7 +33,7 @@ sealed class ValidationNEL<L, R> {
         /**
          * Constructor of Failure from a single value.
          */
-        fun <L, R> failure(left: L): ValidationNEL<L, R> = Failure(listOf(left))
+        fun <L, R> failure(error: L): ValidationNEL<L, R> = Failure(listOf(error))
 
         /**
          * Constructor of Failure from a list of values. If the list is empty, it will throw an IllegalArgumentException
@@ -45,7 +45,7 @@ sealed class ValidationNEL<L, R> {
         /**
          * Constructor of Success from a value
          */
-        fun <L, R> success(right: R): ValidationNEL<L, R> = Success(right)
+        fun <L, R> success(value: R): ValidationNEL<L, R> = Success(value)
     }
 
     /**
@@ -59,12 +59,12 @@ sealed class ValidationNEL<L, R> {
     operator abstract fun component2(): R?
 
     /**
-     * Return True if the given value is a Success, False otherwise.
+     * Returns True if the given value is a Success, False otherwise.
      */
     abstract fun isSuccess(): Boolean
 
     /**
-     * Return True if the given value is a Failure, False otherwise.
+     * Returns True if the given value is a Failure, False otherwise.
      */
     abstract fun isFailure(): Boolean
 
@@ -195,17 +195,17 @@ inline fun <T> validationNelTry(body: () -> T): ValidationNEL<Throwable, T> = tr
 /**
  * Builder of Success from Option type
  */
-inline fun <L, R> Option<R>.toSuccess(left: () -> L): ValidationNEL<L, R> =
-        fold({ left().toFailureNel() }, { get().toSuccessNel() })
+inline fun <L, R> Option<R>.toSuccess(failure: () -> L): ValidationNEL<L, R> =
+        fold({ failure().toFailureNel() }, { get().toSuccessNel() })
 
 /**
- * Builder of Failure from Option type. In case the receiver is non-empty, Success will be its value.
+ * Builder of Failure from Option type. In case the receiver is non-empty, success will be its value.
  */
-inline fun <L, R> Option<L>.toFailure(right: () -> R): ValidationNEL<L, R> =
-        fold({ right().toSuccessNel() }, { get().toFailureNel() })
+inline fun <L, R> Option<L>.toFailure(success: () -> R): ValidationNEL<L, R> =
+        fold({ success().toSuccessNel() }, { get().toFailureNel() })
 
 /**
- * Embed pure values in ValidationNEL. Lift a value.
+ * Embeds pure values in ValidationNEL. Lift a value.
  */
 fun <L, R> R.pure(): ValidationNEL<L, R> = this.toSuccessNel()
 
@@ -235,25 +235,25 @@ fun <L, A, B, R> ValidationNEL<L, (A, B) -> R>.ap2(valX: ValidationNEL<L, A>, va
             } } }
 
 /**
- * Lift a function to actions.
+ * Lifts a function to actions.
  */
 fun <L, A, R> ((A) -> R).liftA(): (ValidationNEL<L, A>) -> ValidationNEL<L, R> = { it.map(this) }
 
 /**
- * Lift a binary function to actions.
+ * Lifts a binary function to actions.
  */
 fun <L, A, B, C> ((A, B) -> C).liftA2(): (ValidationNEL<L, A>, ValidationNEL<L, B>) -> ValidationNEL<L, C> =
         { valX, valY -> toSuccessNel<L, ((A, B) -> C)>().ap2(valX, valY) }
 
 /**
- * Transforms a nested Either, ie, a ValidationNEL of type ValidationNEL<L, ValidationNEL<L, R>>, into an un-nested
+ * Transforms a nested ValidationNEL, ie, a ValidationNEL of type ValidationNEL<L, ValidationNEL<L, R>>, into an un-nested
  * ValidationNEL, ie, an ValidationNEL of type ValidationNEL<L, R>.
  */
 fun <L, R> ValidationNEL<L, ValidationNEL<L, R>>.flatten(): ValidationNEL<L, R> =
         fold({ ValidationNEL.failure(it) }, { it })
 
 /**
-* Map each element of the list of ValidationNEL to an action, evaluate these actions from left to right, and collect the
+* Maps each element of the list of ValidationNEL to an action, evaluates these actions from left to right, and collects the
 * results, accumulating errors on the left.
  */
 fun <L, A, B> List<A>.traverseA(f: (A) -> ValidationNEL<L, B>): ValidationNEL<L, List<B>> =
@@ -267,7 +267,7 @@ fun <L, A, B> List<A>.traverseA(f: (A) -> ValidationNEL<L, B>): ValidationNEL<L,
         )
 
 /**
- * Evaluate each action in the structure from left to right, and collect the results. It also gathers together
+ * Evaluates each action in the structure from left to right, and collects the results. It also gathers together
  * applicative effects.
  * It "flips" List<ValidationNEL<L, A>> to ValidationNEL<L, List<A>>.
  *

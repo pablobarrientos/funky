@@ -4,5 +4,5 @@
 
 `fun <A, B> ((A) -> B).liftA(): (`[`Option`](../-option/index.md)`<A>) -> `[`Option`](../-option/index.md)`<B>`
 
-Lift a function to actions.
+Lifts a function to actions.
 

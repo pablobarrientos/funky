@@ -5,5 +5,5 @@
 `infix fun <A, B, C> ((A) -> B).forwardCompose(f: (B) -> C): (A) -> C`
 
 Composition of function in reverse order: (f forwardCompose g)(x) &lt;=&gt; g(f(x)).
-This function is useful if we chain function and provide the "initial input" at the end of the chain.
+This function is useful if we chain functions and provide the "initial input" at the end of the chain.
 

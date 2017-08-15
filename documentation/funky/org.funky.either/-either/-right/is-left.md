@@ -6,5 +6,5 @@
 
 Overrides [Either.isLeft](../is-left.md)
 
-Return True if the given value is a Left-value, False otherwise.
+Returns True if the given value is a Left-value, False otherwise.
 

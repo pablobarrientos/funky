@@ -4,7 +4,7 @@
 
 `fun <L, A> `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`ValidationNEL`](../-validation-n-e-l/index.md)`<L, A>>.sequence(): `[`ValidationNEL`](../-validation-n-e-l/index.md)`<L, `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<A>>`
 
-Evaluate each action in the structure from left to right, and collect the results. It also gathers together
+Evaluates each action in the structure from left to right, and collects the results. It also gathers together
 applicative effects.
 It "flips" List&lt;ValidationNEL&lt;L, A&gt;&gt; to ValidationNEL&lt;L, List&gt;.
 

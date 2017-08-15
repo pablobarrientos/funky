@@ -2,7 +2,7 @@
 
 # success
 
-`fun <L, R> success(right: R): `[`ValidationNEL`](index.md)`<L, R>`
+`fun <L, R> success(value: R): `[`ValidationNEL`](index.md)`<L, R>`
 
 Constructor of Success from a value
 

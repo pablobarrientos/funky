@@ -21,7 +21,7 @@
 
 | Name | Summary |
 |---|---|
-| [ap](ap.md) | `infix fun <L, R, A> `[`Either`](-either/index.md)`<L, (A) -> R>.ap(optR: `[`Either`](-either/index.md)`<L, A>): `[`Either`](-either/index.md)`<L, R>`<br>Sequential application of Either as applicative functor. |
+| [ap](ap.md) | `infix fun <L, R, A> `[`Either`](-either/index.md)`<L, (A) -> R>.ap(eitherR: `[`Either`](-either/index.md)`<L, A>): `[`Either`](-either/index.md)`<L, R>`<br>Sequential application of Either as applicative functor. |
 | [ap2](ap2.md) | `fun <L, A, B, R> `[`Either`](-either/index.md)`<L, (A, B) -> R>.ap2(eitherA: `[`Either`](-either/index.md)`<L, A>, eitherB: `[`Either`](-either/index.md)`<L, B>): `[`Either`](-either/index.md)`<L, R>`<br>Sequential application of Either as applicative functor. |
 | [eitherTry](either-try.md) | `fun <T> eitherTry(action: () -> T): `[`Either`](-either/index.md)`<`[`Throwable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)`, T>`<br>Wraps an action in an Either. In case the action execution throws an exception it returns a Left, otherwise it returns a Right with the result of action. |
 | [flatten](flatten.md) | `fun <L, R> `[`Either`](-either/index.md)`<L, `[`Either`](-either/index.md)`<L, R>>.flatten(): `[`Either`](-either/index.md)`<L, R>`<br>Transforms a nested Either, ie, a Either of type Either&lt;L, Either&lt;L, R&gt;&gt;, into an un-nested Either, ie, an Either of type Either&lt;L, R&gt;. |

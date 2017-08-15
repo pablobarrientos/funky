@@ -24,7 +24,7 @@
 
 | Name | Summary |
 |---|---|
-| [isDefined](../is-defined.md) | `fun isDefined(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Indicates it the receiver is a non-empty Option |
-| [nonEmpty](../non-empty.md) | `fun nonEmpty(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Indicates it the receiver is a non-empty Option |
+| [isDefined](../is-defined.md) | `fun isDefined(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Indicates if the receiver is a non-empty Option |
+| [nonEmpty](../non-empty.md) | `fun nonEmpty(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Indicates if the receiver is a non-empty Option |
 | [orNull](../or-null.md) | `fun orNull(): A?`<br>Converts this Option to a nullable value. |
 | [toList](../to-list.md) | `fun toList(): `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<A>`<br>Returns a singleton list containing the Option's value if it is non-empty, or the empty list if the Option is empty. |

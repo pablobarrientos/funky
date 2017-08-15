@@ -2,7 +2,7 @@
 
 # toSuccess
 
-`inline fun <L, R> `[`Option`](../org.funky.option/-option/index.md)`<R>.toSuccess(left: () -> L): `[`ValidationNEL`](-validation-n-e-l/index.md)`<L, R>`
+`inline fun <L, R> `[`Option`](../org.funky.option/-option/index.md)`<R>.toSuccess(failure: () -> L): `[`ValidationNEL`](-validation-n-e-l/index.md)`<L, R>`
 
 Builder of Success from Option type
 

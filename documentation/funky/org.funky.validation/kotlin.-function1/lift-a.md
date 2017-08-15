@@ -4,5 +4,5 @@
 
 `fun <L, A, R> ((A) -> R).liftA(): (`[`ValidationNEL`](../-validation-n-e-l/index.md)`<L, A>) -> `[`ValidationNEL`](../-validation-n-e-l/index.md)`<L, R>`
 
-Lift a function to actions.
+Lifts a function to actions.
 

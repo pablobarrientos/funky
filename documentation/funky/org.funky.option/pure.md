@@ -4,5 +4,5 @@
 
 `fun <A> A.pure(): `[`Option`](-option/index.md)`<A>`
 
-Embed pure values in Option. Lift a value.
+Embeds pure values in Option. Lifts a value.
 

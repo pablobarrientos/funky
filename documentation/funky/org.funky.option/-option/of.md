@@ -4,5 +4,5 @@
 
 `fun <A> of(t: A?): `[`Option`](index.md)`<A>`
 
-Build a non-empty Option in case the receiver is not null
+Builds a non-empty Option in case the receiver is not null
 

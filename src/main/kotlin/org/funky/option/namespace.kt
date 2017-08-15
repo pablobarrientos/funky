@@ -21,13 +21,13 @@ import java.util.NoSuchElementException
 /**
  * Represents optional values. Instances of Option are either an instance of Some or the object None.
  * The most idiomatic way to use an Option instance is to treat it as a collection of zero or one element and use
-  * map,flatMap, filter, or foreach.
+  * map, flatMap, filter, or foreach.
  */
 sealed class Option<out A> {
 
     companion object {
         /**
-         * Build a non-empty Option in case the receiver is not null
+         * Builds a non-empty Option in case the receiver is not null
          */
         fun <A> of(t: A?) : Option<A> = if (t == null) Option.empty() else Some(t)
         /**
@@ -79,12 +79,12 @@ sealed class Option<out A> {
         }
 
     /**
-     * Indicates it the receiver is a non-empty Option
+     * Indicates if the receiver is a non-empty Option
      */
     fun nonEmpty(): Boolean = isDefined()
 
     /**
-     * Indicates it the receiver is a non-empty Option
+     * Indicates if the receiver is a non-empty Option
      */
     fun isDefined(): Boolean = !isEmpty()
 
@@ -119,7 +119,7 @@ sealed class Option<out A> {
     inline fun exists(p: (A) -> Boolean): Boolean = fold( { false }, { t: A -> p(t) })
 
     /**
-     * Apply the given procedure f to the option's value, if it is non-empty
+     * Applies the given function f to the option's value, if it is non-empty
      */
     inline fun forEach(f: (A) -> Unit) {
         if (this.isDefined()) f(this.get())
@@ -133,12 +133,12 @@ sealed class Option<out A> {
 }
 
 /**
- * Returns the option's value if the option is non-empty, otherwise return the result of evaluating default.
+ * Returns the option's value if the option is non-empty, otherwise returns the result of evaluating default.
  */
 infix fun <A> Option<A>.getOrElse(default: () -> A): A = fold( default, { it })
 
 /**
- * Returns this Option if it is non-empty, otherwise return the result of evaluating alternative.
+ * Returns this Option if it is non-empty, otherwise returns the result of evaluating alternative.
  */
 infix fun <A> Option<A>.orElse(alternative: () -> Option<A>): Option<A> = fold( alternative, { this })
 
@@ -150,7 +150,7 @@ infix fun <A> Option<A>.or(value: Option<A>): Option<A> = fold( { value }, { thi
 //extensions for other types
 
 /**
- * Convert any value to Option.
+ * Converts any value to Option.
  */
 fun <A> A?.toOption(): Option<A> = Option.of(this)
 
@@ -166,127 +166,127 @@ inline fun <A> optionTry(action: () -> A): Option<A> =
     }
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun <A> Array<out A>.firstOption(): Option<A> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun BooleanArray.firstOption(): Option<Boolean> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun ByteArray.firstOption(): Option<Byte> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracs the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun CharArray.firstOption(): Option<Char> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun DoubleArray.firstOption(): Option<Double> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun FloatArray.firstOption(): Option<Float> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun IntArray.firstOption(): Option<Int> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun LongArray.firstOption(): Option<Long> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun ShortArray.firstOption(): Option<Short> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun <A> Iterable<A?>.firstOption(): Option<A> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun <A> Sequence<A?>.firstOption(): Option<A> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun String.firstOption(): Option<Char> = firstOrNull().toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun <A> Array<out A>.firstOption(p: (A) -> Boolean): Option<A> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun BooleanArray.firstOption(p: (Boolean) -> Boolean): Option<Boolean> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun ByteArray.firstOption(p: (Byte) -> Boolean): Option<Byte> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun CharArray.firstOption(p: (Char) -> Boolean): Option<Char> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun DoubleArray.firstOption(p: (Double) -> Boolean): Option<Double> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun FloatArray.firstOption(p: (Float) -> Boolean): Option<Float> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun IntArray.firstOption(p: (Int) -> Boolean): Option<Int> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun LongArray.firstOption(p: (Long) -> Boolean): Option<Long> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun ShortArray.firstOption(p: (Short) -> Boolean): Option<Short> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun <A> Iterable<A?>.firstOption(p: (A?) -> Boolean): Option<A> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 fun <A> Sequence<A?>.firstOption(p: (A?) -> Boolean): Option<A> = firstOrNull(p).toOption()
 
 /**
- * Extract the first element and wrapps it in an Option. Returns None is the receiver has no elements.
+ * Extracts the first element and wraps it in an Option. Returns None is the receiver has no elements.
  */
 inline fun String.firstOption(p: (Char) -> Boolean): Option<Char> = firstOrNull(p).toOption()
 
 /**
- * Embed pure values in Option. Lift a value.
+ * Embeds pure values in Option. Lifts a value.
  */
 fun <A> A.pure(): Option<A> = Option.of(this)
 
@@ -305,12 +305,12 @@ fun <A, B, C> Option<(A, B) -> C>.ap2(optA: Option<A>, optB: Option<B>): Option<
         } } }
 
 /**
- * Lift a function to actions.
+ * Lifts a function to actions.
  */
 fun <A, B> ((A) -> B).liftA(): (Option<A>) -> Option<B> = { toOption() ap it }
 
 /**
- * Lift a binary function to actions.
+ * Lifts a binary function to actions.
  */
 fun <A, B, C> ((A, B) -> C).liftA2(): (Option<A>, Option<B>) -> Option<C> =
         { optA, optB -> toOption().ap2(optA, optB) }
@@ -321,7 +321,7 @@ fun <A, B, C> ((A, B) -> C).liftA2(): (Option<A>, Option<B>) -> Option<C> =
 fun <A> Option<Option<A>>.flatten(): Option<A> = fold({ Option.empty() }, { it })
 
 /**
-* Map each element of the list of Option to an action, evaluate these actions from left to right, and collect the results.
+* Maps each element of the list of Option to an action, evaluates these actions from left to right, and collect the results.
  */
 fun <A, B> List<A>.traverseA(f: (A) -> Option<B>): Option<List<B>> =
     foldRight(Option.of(emptyList()),
@@ -332,7 +332,7 @@ fun <A, B> List<A>.traverseA(f: (A) -> Option<B>): Option<List<B>> =
     )
 
 /**
- * Evaluate each action in the structure from left to right, and collect the results. It also gathers together
+ * Evaluates each action in the structure from left to right, and collects the results. It also gathers together
  * applicative effects.
  * It "flips" List<Option<A>> to Option<List<A>>.
  */
