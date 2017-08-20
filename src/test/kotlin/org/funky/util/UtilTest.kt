@@ -93,5 +93,11 @@ class UtilTest : StringSpec() {
                 greater == x >= 0
             }
         }
+
+        "infix apply" {
+            val plus1 = { a: Int -> a + 1 }
+            val result = plus1 `$` 1 + 2 + 3
+            result shouldBe 7
+        }
     }
 }

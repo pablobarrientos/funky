@@ -70,3 +70,8 @@ tailrec fun <T> ((T) -> T).until(condition: (T) -> Boolean, initialValue: T): T 
  * unless (x == 0) { y = 100 / x }
  */
 fun unless(condition: Boolean): (() -> Unit) -> Unit = { body -> if (!condition) body() }
+
+/**
+ * Infix application operator.
+ */
+infix fun <A, B> ((A) -> B).`$`(parameter: A) = this(parameter)
