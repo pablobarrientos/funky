@@ -55,7 +55,7 @@ class UtilTest : StringSpec() {
 
         "const" {
             forAll { x: Int, y: Int ->
-                x == const(x)(y)
+                x == const<Int, Int>(x)(y)
             }
         }
 

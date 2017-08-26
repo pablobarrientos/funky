@@ -4,6 +4,7 @@
 
 | Name | Summary |
 |---|---|
+| [$]($.md) | `infix fun <A, B> ((A) -> B).$(parameter: A): B`<br>Infix application operator. |
 | [andThen](and-then.md) | `infix fun <A, B, C> ((A) -> B).andThen(f: (B) -> C): (A) -> C`<br>Alias for forwardCompose |
 | [compose](compose.md) | `infix fun <A, B, C> ((B) -> C).compose(f: (A) -> B): (A) -> C`<br>Function composition. I.e. (f compose g)(x) &lt;=&gt; f(g(x)) |
 | [forwardCompose](forward-compose.md) | `infix fun <A, B, C> ((A) -> B).forwardCompose(f: (B) -> C): (A) -> C`<br>Composition of function in reverse order: (f forwardCompose g)(x) &lt;=&gt; g(f(x)). This function is useful if we chain functions and provide the "initial input" at the end of the chain. |

@@ -97,6 +97,15 @@ $dokka.location:org.funky.option$liftA(kotlin.Function1((org.funky.option.liftA.
 $dokka.location:org.funky.option$liftA2(kotlin.Function2((org.funky.option.liftA2.A, org.funky.option.liftA2.B, org.funky.option.liftA2.C)))org.funky.option/kotlin.-function2/lift-a2.md
 $dokka.location:org.funky.option$sequenceA(kotlin.collections.List((org.funky.option.Option((org.funky.option.sequenceA.A)))))org.funky.option/kotlin.collections.-list/sequence-a.md
 $dokka.location:org.funky.option$traverseA(kotlin.collections.List((org.funky.option.traverseA.A)), kotlin.Function1((org.funky.option.traverseA.A, org.funky.option.Option((org.funky.option.traverseA.B)))))org.funky.option/kotlin.collections.-list/traverse-a.md
+$dokka.location:org.funky.reader$ap(kotlin.Function1((org.funky.reader.ap.C, kotlin.Function1((org.funky.reader.ap.A, org.funky.reader.ap.B)))), kotlin.Function1((org.funky.reader.ap.C, org.funky.reader.ap.A)))org.funky.reader/kotlin.-function1/ap.md
+$dokka.location:org.funky.reader$ap2(kotlin.Function1((org.funky.reader.ap2.D, kotlin.Function2((org.funky.reader.ap2.A, org.funky.reader.ap2.B, org.funky.reader.ap2.C)))), kotlin.Function1((org.funky.reader.ap2.D, org.funky.reader.ap2.A)), kotlin.Function1((org.funky.reader.ap2.D, org.funky.reader.ap2.B)))org.funky.reader/kotlin.-function1/ap2.md
+$dokka.location:org.funky.reader$flatMap(kotlin.Function1((org.funky.reader.flatMap.A, org.funky.reader.flatMap.B)), kotlin.Function1((org.funky.reader.flatMap.B, kotlin.Function1((org.funky.reader.flatMap.A, org.funky.reader.flatMap.C)))))org.funky.reader/kotlin.-function1/flat-map.md
+$dokka.location:org.funky.reader$liftA(kotlin.Function1((org.funky.reader.liftA.A, org.funky.reader.liftA.B)))org.funky.reader/kotlin.-function1/lift-a.md
+$dokka.location:org.funky.reader$liftA2(kotlin.Function2((org.funky.reader.liftA2.A, org.funky.reader.liftA2.B, org.funky.reader.liftA2.C)))org.funky.reader/kotlin.-function2/lift-a2.md
+$dokka.location:org.funky.reader$map(kotlin.Function1((org.funky.reader.map.B, org.funky.reader.map.C)), kotlin.Function1((org.funky.reader.map.A, org.funky.reader.map.B)))org.funky.reader/kotlin.-function1/map.md
+$dokka.location:org.funky.reader$sequenceA(kotlin.collections.List((kotlin.Function1((org.funky.reader.sequenceA.B, org.funky.reader.sequenceA.A)))))org.funky.reader/kotlin.collections.-list/sequence-a.md
+$dokka.location:org.funky.reader$traverseA(kotlin.collections.List((org.funky.reader.traverseA.A)), kotlin.Function1((org.funky.reader.traverseA.A, kotlin.Function1((org.funky.reader.traverseA.C, org.funky.reader.traverseA.B)))))org.funky.reader/kotlin.collections.-list/traverse-a.md
+$dokka.location:org.funky.util$$(kotlin.Function1((org.funky.util.$.A, org.funky.util.$.B)), org.funky.util.$.A)org.funky.util/kotlin.-function1/$.md
 $dokka.location:org.funky.util$andThen(kotlin.Function1((org.funky.util.andThen.A, org.funky.util.andThen.B)), kotlin.Function1((org.funky.util.andThen.B, org.funky.util.andThen.C)))org.funky.util/kotlin.-function1/and-then.md
 $dokka.location:org.funky.util$compose(kotlin.Function1((org.funky.util.compose.B, org.funky.util.compose.C)), kotlin.Function1((org.funky.util.compose.A, org.funky.util.compose.B)))org.funky.util/kotlin.-function1/compose.md
 $dokka.location:org.funky.util$flip(kotlin.Function2((org.funky.util.flip.A, org.funky.util.flip.B, org.funky.util.flip.C)))org.funky.util/kotlin.-function2/flip.md
@@ -119,5 +128,6 @@ org.funky.curry
 org.funky.curry.ext
 org.funky.either
 org.funky.option
+org.funky.reader
 org.funky.util
 org.funky.validation

@@ -2,7 +2,7 @@
 
 # const
 
-`fun <A> const(a: A): (`[`Any`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)`) -> A`
+`fun <A, B> const(a: A): (B) -> A`
 
 Converts any value A to a function (B) -&gt; A
 

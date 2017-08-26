@@ -18,6 +18,6 @@
 
 | Name | Summary |
 |---|---|
-| [const](const.md) | `fun <A> const(a: A): (`[`Any`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)`) -> A`<br>Converts any value A to a function (B) -&gt; A |
+| [const](const.md) | `fun <A, B> const(a: A): (B) -> A`<br>Converts any value A to a function (B) -&gt; A |
 | [identity](identity.md) | `fun <A> identity(): (A) -> A`<br>Identify function. |
 | [unless](unless.md) | `fun unless(condition: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): (() -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Given the condition, it will execute the function if the condition is false. |

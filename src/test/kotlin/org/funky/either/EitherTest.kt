@@ -257,7 +257,7 @@ class EitherTest : StringSpec() {
 
         "sequence" {
             forAll(Gen.list(EitherGen)) { list: List<Either<String, Int>> ->
-                val firstLeft: Option<Either<String,Int>> = list.firstOption { it!!.isLeft() }
+                val firstLeft: Option<Either<String, Int>> = list.firstOption { it!!.isLeft() }
                 val result = list.sequence()
                 (list.any { it.isLeft() } && result.isLeft() && result == firstLeft.get()) || (list.all { it.isRight() } && result.isRight())
             }

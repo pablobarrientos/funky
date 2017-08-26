@@ -10,10 +10,13 @@
 | [kotlin.CharArray](../org.funky.option/kotlin.-char-array/index.md) (extensions in package org.funky.option) |  |
 | [kotlin.DoubleArray](../org.funky.option/kotlin.-double-array/index.md) (extensions in package org.funky.option) |  |
 | [org.funky.either.Either](../org.funky.either/-either/index.md) | Represents a value of one of two possible types (a disjoint union.) An instance of `Either` is an instance of either Left or Right. |
+| [org.funky.reader.F](../org.funky.reader/-f.md) | Extension functions to represent the applicative functor for the type "(A) -&gt;". It is known as the "reader" or "environment" applicative functor. It allows a parameter to be passed across functions. From a Functor point of view this "container" stores the value A. Given a particular environment, you can retrieve the corresponding value by simply applying the function. |
+| [org.funky.reader.F2](../org.funky.reader/-f2.md) |  |
 | [kotlin.FloatArray](../org.funky.option/kotlin.-float-array/index.md) (extensions in package org.funky.option) |  |
 | [kotlin.Function1](../org.funky.curry/kotlin.-function1/index.md) (extensions in package org.funky.curry) |  |
 | [kotlin.Function1](../org.funky.either/kotlin.-function1/index.md) (extensions in package org.funky.either) |  |
 | [kotlin.Function1](../org.funky.option/kotlin.-function1/index.md) (extensions in package org.funky.option) |  |
+| [kotlin.Function1](../org.funky.reader/kotlin.-function1/index.md) (extensions in package org.funky.reader) |  |
 | [kotlin.Function1](../org.funky.util/kotlin.-function1/index.md) (extensions in package org.funky.util) |  |
 | [kotlin.Function1](../org.funky.validation/kotlin.-function1/index.md) (extensions in package org.funky.validation) |  |
 | [kotlin.Function10](../org.funky.curry.ext/kotlin.-function10/index.md) (extensions in package org.funky.curry.ext) |  |
@@ -31,6 +34,7 @@
 | [kotlin.Function2](../org.funky.curry/kotlin.-function2/index.md) (extensions in package org.funky.curry) |  |
 | [kotlin.Function2](../org.funky.either/kotlin.-function2/index.md) (extensions in package org.funky.either) |  |
 | [kotlin.Function2](../org.funky.option/kotlin.-function2/index.md) (extensions in package org.funky.option) |  |
+| [kotlin.Function2](../org.funky.reader/kotlin.-function2/index.md) (extensions in package org.funky.reader) |  |
 | [kotlin.Function2](../org.funky.util/kotlin.-function2/index.md) (extensions in package org.funky.util) |  |
 | [kotlin.Function2](../org.funky.validation/kotlin.-function2/index.md) (extensions in package org.funky.validation) |  |
 | [kotlin.Function20](../org.funky.curry/kotlin.-function20/index.md) (extensions in package org.funky.curry) |  |
@@ -61,6 +65,7 @@
 | [kotlin.collections.List](../org.funky.collections/kotlin.collections.-list/index.md) (extensions in package org.funky.collections) |  |
 | [kotlin.collections.List](../org.funky.either/kotlin.collections.-list/index.md) (extensions in package org.funky.either) |  |
 | [kotlin.collections.List](../org.funky.option/kotlin.collections.-list/index.md) (extensions in package org.funky.option) |  |
+| [kotlin.collections.List](../org.funky.reader/kotlin.collections.-list/index.md) (extensions in package org.funky.reader) |  |
 | [kotlin.collections.List](../org.funky.validation/kotlin.collections.-list/index.md) (extensions in package org.funky.validation) |  |
 | [kotlin.LongArray](../org.funky.option/kotlin.-long-array/index.md) (extensions in package org.funky.option) |  |
 | [org.funky.validation.NonEmptyList](../org.funky.validation/-non-empty-list.md) |  |

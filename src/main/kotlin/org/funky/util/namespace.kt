@@ -39,7 +39,7 @@ fun <A> identity(): (A) -> A = { it }
 /**
  * Converts any value A to a function (B) -> A
  */
-fun <A> const(a: A): (Any) -> A = { _ -> a }
+fun <A, B> const(a: A): (B) -> A = { _ -> a }
 
 /**
  * flip takes its two arguments in the reverse order of the receiver.
